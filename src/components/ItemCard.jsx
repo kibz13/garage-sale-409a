@@ -14,7 +14,8 @@ export default function ItemCard({ item, adminMode, onToggleSold }) {
   const photos = images?.length ? images : image ? [image] : []
   const [photoIdx, setPhotoIdx] = useState(0)
 
-  const waText = encodeURIComponent(`Hi, I'm interested in your ${name} listed for $${price}`)
+  const priceStr = typeof price === 'number' ? ` listed for $${price}` : ''
+  const waText = encodeURIComponent(`Hi, I'm interested in your ${name}${priceStr}`)
   const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`
 
   const prev = () => setPhotoIdx((i) => (i - 1 + photos.length) % photos.length)
@@ -52,7 +53,7 @@ export default function ItemCard({ item, adminMode, onToggleSold }) {
         <h2 className="item-card__name">{name}</h2>
         <p className="item-card__description">{description}</p>
         <div className="item-card__footer">
-          <span className="item-card__price">${price}</span>
+          <span className="item-card__price">{typeof price === 'number' ? `$${price}` : price}</span>
           <div className="item-card__actions">
             {originalUrl && (
               <a
