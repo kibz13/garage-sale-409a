@@ -46,7 +46,7 @@ export default function App() {
       <header className="app__header">
         <div className="app__header-text">
           <h1 className="app__title" onClick={handleTitleClick}>
-            Garage Sale 409A
+            Garage Sale
           </h1>
           <p className="app__subtitle">
             Everything must go! Message via WhatsApp to arrange pickup.
