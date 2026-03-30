@@ -2,8 +2,15 @@ import { useState } from 'react'
 
 const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER
 
+function formatDate(dateStr) {
+  if (!dateStr) return null
+  const d = new Date(dateStr + 'T00:00:00')
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+}
+
 export default function ItemCard({ item, adminMode, onToggleSold }) {
-  const { id, name, description, price, images, image, originalUrl, sold } = item
+  const { id, name, description, price, images, image, originalUrl, sold, availableFrom } = item
+  const isUnavailable = !sold && availableFrom && new Date(availableFrom + 'T00:00:00') > new Date()
   const photos = images?.length ? images : image ? [image] : []
   const [photoIdx, setPhotoIdx] = useState(0)
 
@@ -14,7 +21,7 @@ export default function ItemCard({ item, adminMode, onToggleSold }) {
   const next = () => setPhotoIdx((i) => (i + 1) % photos.length)
 
   return (
-    <div className={`item-card${sold ? ' item-card--sold' : ''}`}>
+    <div className={`item-card${sold ? ' item-card--sold' : ''}${isUnavailable ? ' item-card--unavailable' : ''}`}>
       <div className="item-card__image-wrap">
         {photos.length > 0 ? (
           <img src={photos[photoIdx]} alt={`${name} photo ${photoIdx + 1}`} className="item-card__image" />
@@ -22,6 +29,7 @@ export default function ItemCard({ item, adminMode, onToggleSold }) {
           <div className="item-card__image item-card__image--placeholder" />
         )}
         {sold && <div className="item-card__sold-overlay">SOLD</div>}
+        {isUnavailable && <div className="item-card__available-overlay">Available {formatDate(availableFrom)}</div>}
         {photos.length > 1 && (
           <>
             <button className="item-card__nav item-card__nav--prev" onClick={prev} aria-label="Previous photo">&#8249;</button>
@@ -56,7 +64,7 @@ export default function ItemCard({ item, adminMode, onToggleSold }) {
                 Compare online
               </a>
             )}
-            {!sold && (
+            {!sold && !isUnavailable && (
               <a
                 className="item-card__whatsapp"
                 href={waUrl}

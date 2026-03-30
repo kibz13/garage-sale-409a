@@ -7,6 +7,7 @@ export const items = [
     images: ["/images/shelf.jpg"],
     originalUrl: "",
     sold: false,
+    availableFrom: "", // e.g. "2025-05-01" — leave empty if available now
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const items = [
     images: ["/images/coffee-table.jpg"],
     originalUrl: "",
     sold: false,
+    availableFrom: "",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const items = [
     images: ["/images/lamp.jpg"],
     originalUrl: "",
     sold: true,
+    availableFrom: "",
   },
   {
     id: 4,
@@ -34,5 +37,6 @@ export const items = [
     images: ["/images/chair.jpg"],
     originalUrl: "",
     sold: false,
+    availableFrom: "",
   },
 ];

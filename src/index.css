@@ -108,6 +108,10 @@ body {
   opacity: 0.7;
 }
 
+.item-card--unavailable {
+  opacity: 0.85;
+}
+
 .item-card__image-wrap {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -137,6 +141,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+}
+
+.item-card__available-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   pointer-events: none;
 }
 
