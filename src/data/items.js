@@ -20,6 +20,16 @@ export const items = [
     availableFrom: "",
   },
   {
+    id: 6,
+    name: "Round Rattan Coffee Table",
+    description: "",
+    price: 190,
+    images: ["/images/round_rattan_coffee_table.jpeg", "/images/round_rattan_coffee_table_2.jpeg", "/images/round_rattan_coffee_table_3.jpeg"],
+    originalUrl: "https://www.wayfair.com/furniture/pdp/bay-isle-home-curtice-frame-round-rattan-coffee-table-w011354388.html",
+    sold: false,
+    availableFrom: "",
+  },
+  {
     id: 5,
     name: "PS5",
     description: "With two controllers",
