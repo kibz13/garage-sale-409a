@@ -28,12 +28,26 @@ body {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.1;
+  cursor: default;
+  user-select: none;
 }
 
 .app__subtitle {
   margin-top: 0.4rem;
   color: #666;
   font-size: 1rem;
+}
+
+.admin-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
 }
 
 .app__main {
@@ -70,7 +84,7 @@ body {
 
 .item-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.25rem;
 }
 
@@ -108,6 +122,10 @@ body {
   display: block;
 }
 
+.item-card__image--placeholder {
+  background: #ddd;
+}
+
 .item-card__sold-overlay {
   position: absolute;
   inset: 0;
@@ -119,7 +137,65 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
+
+/* ── Photo carousel ──────────────────────────────────────── */
+
+.item-card__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  z-index: 2;
+}
+
+.item-card__nav:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.item-card__nav--prev { left: 0.5rem; }
+.item-card__nav--next { right: 0.5rem; }
+
+.item-card__dots {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  z-index: 2;
+}
+
+.item-card__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.item-card__dot--active {
+  background: #fff;
+}
+
+/* ── Card body ───────────────────────────────────────────── */
 
 .item-card__body {
   padding: 1rem;
@@ -145,12 +221,35 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-top: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .item-card__price {
   font-size: 1.2rem;
   font-weight: 700;
   color: #1a1a1a;
+}
+
+.item-card__actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item-card__compare {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.item-card__compare:hover {
+  color: #222;
 }
 
 .item-card__whatsapp {
@@ -169,6 +268,35 @@ body {
 
 .item-card__whatsapp:hover {
   background: #1ebe5d;
+}
+
+.item-card__toggle {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.45rem;
+  border: 1.5px solid #25d366;
+  border-radius: 6px;
+  background: transparent;
+  color: #25d366;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.item-card__toggle:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+.item-card__toggle--sold {
+  border-color: #e53e3e;
+  color: #e53e3e;
+}
+
+.item-card__toggle--sold:hover {
+  background: #e53e3e;
+  color: #fff;
 }
 
 @media (max-width: 500px) {

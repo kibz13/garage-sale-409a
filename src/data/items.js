@@ -4,7 +4,8 @@ export const items = [
     name: "IKEA Shelf",
     description: "White, 5 shelves, excellent condition",
     price: 20,
-    image: "/images/shelf.jpg",
+    images: ["/images/shelf.jpg"],
+    originalUrl: "",
     sold: false,
   },
   {
@@ -12,7 +13,8 @@ export const items = [
     name: "Coffee Table",
     description: "Solid wood, minor scratches, 120×60 cm",
     price: 35,
-    image: "/images/coffee-table.jpg",
+    images: ["/images/coffee-table.jpg"],
+    originalUrl: "",
     sold: false,
   },
   {
@@ -20,7 +22,8 @@ export const items = [
     name: "Desk Lamp",
     description: "Adjustable arm, LED bulb included",
     price: 10,
-    image: "/images/lamp.jpg",
+    images: ["/images/lamp.jpg"],
+    originalUrl: "",
     sold: true,
   },
   {
@@ -28,7 +31,8 @@ export const items = [
     name: "Office Chair",
     description: "Black mesh, height-adjustable, armrests",
     price: 50,
-    image: "/images/chair.jpg",
+    images: ["/images/chair.jpg"],
+    originalUrl: "",
     sold: false,
   },
 ];
