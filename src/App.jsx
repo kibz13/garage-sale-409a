@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { items as initialItems } from './data/items.js'
 import ItemGrid from './components/ItemGrid.jsx'
-import QRSection from './components/QRSection.jsx'
 
 function loadSoldMap() {
   try {
@@ -53,7 +52,6 @@ export default function App() {
           </p>
           {adminMode && <span className="admin-badge">Admin Mode — click items to toggle</span>}
         </div>
-        <QRSection />
       </header>
       <main className="app__main">
         <ItemGrid items={items} adminMode={adminMode} onToggleSold={toggleSold} />
