@@ -20,6 +20,16 @@ export const items = [
     availableFrom: "",
   },
   {
+    id: 5,
+    name: "PS5",
+    description: "With two controllers",
+    price: 475,
+    images: ["/images/PS5.jpeg"],
+    originalUrl: "",
+    sold: false,
+    availableFrom: "",
+  },
+  {
     id: 4,
     name: "Feathers Sofa",
     description: "",
