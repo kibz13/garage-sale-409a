@@ -80,6 +80,23 @@ body {
   overflow-wrap: break-word;
 }
 
+.qr-section__download {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.qr-section__download:hover {
+  background: #f0f0f0;
+  color: #222;
+}
+
 /* ── Item grid ───────────────────────────────────────────── */
 
 .item-grid {
