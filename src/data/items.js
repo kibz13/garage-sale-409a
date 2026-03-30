@@ -13,7 +13,7 @@ export const items = [
     id: 2,
     name: "Outdoor Patio",
     description: "",
-    price: 0,
+    price: 80,
     images: ["/images/outdoor_patio.jpeg"],
     originalUrl: "",
     sold: false,
