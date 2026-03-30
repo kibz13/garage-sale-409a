@@ -52,6 +52,7 @@ body {
 
 .app__main {
   padding: 2rem;
+  padding-bottom: 6rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -333,6 +334,31 @@ body {
 .item-card__toggle--sold:hover {
   background: #e53e3e;
   color: #fff;
+}
+
+/* ── WhatsApp floating button ────────────────────────────── */
+
+.whatsapp-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #25d366;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: background 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.whatsapp-fab:hover {
+  background: #1ebe5d;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 @media (max-width: 500px) {

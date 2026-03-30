@@ -1,7 +1,5 @@
 import { useState } from 'react'
 
-const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER
-
 function formatDate(dateStr) {
   if (!dateStr) return null
   const d = new Date(dateStr + 'T00:00:00')
@@ -13,10 +11,6 @@ export default function ItemCard({ item, adminMode, onToggleSold }) {
   const isUnavailable = !sold && availableFrom && new Date(availableFrom + 'T00:00:00') > new Date()
   const photos = images?.length ? images : image ? [image] : []
   const [photoIdx, setPhotoIdx] = useState(0)
-
-  const priceStr = typeof price === 'number' ? ` listed for $${price}` : ''
-  const waText = encodeURIComponent(`Hi, I'm interested in your ${name}${priceStr}`)
-  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`
 
   const prev = () => setPhotoIdx((i) => (i - 1 + photos.length) % photos.length)
   const next = () => setPhotoIdx((i) => (i + 1) % photos.length)
@@ -63,16 +57,6 @@ export default function ItemCard({ item, adminMode, onToggleSold }) {
                 rel="noopener noreferrer"
               >
                 Compare online
-              </a>
-            )}
-            {!sold && !isUnavailable && (
-              <a
-                className="item-card__whatsapp"
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp
               </a>
             )}
           </div>

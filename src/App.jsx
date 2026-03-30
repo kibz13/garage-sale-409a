@@ -56,6 +56,14 @@ export default function App() {
       <main className="app__main">
         <ItemGrid items={items} adminMode={adminMode} onToggleSold={toggleSold} />
       </main>
+      <a
+        className="whatsapp-fab"
+        href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Contact on WhatsApp
+      </a>
     </div>
   )
 }
