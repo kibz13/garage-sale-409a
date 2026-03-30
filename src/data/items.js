@@ -20,6 +20,16 @@ export const items = [
     availableFrom: "",
   },
   {
+    id: 7,
+    name: "Bar Stools",
+    description: "",
+    price: 280,
+    images: ["/images/bar_stools.jpeg", "/images/bar_stools_1.jpeg"],
+    originalUrl: "https://www.ikea.com/us/en/p/janinge-bar-stool-gray-10281354/",
+    sold: false,
+    availableFrom: "",
+  },
+  {
     id: 6,
     name: "Round Rattan Coffee Table",
     description: "",
