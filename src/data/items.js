@@ -16,7 +16,7 @@ export const items = [
     price: 80,
     images: ["/images/outdoor_patio.jpeg"],
     originalUrl: "",
-    sold: false,
+    sold: true,
     availableFrom: "",
   },
   {
