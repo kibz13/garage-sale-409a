@@ -60,6 +60,16 @@ export const items = [
     availableFrom: "",
   },
   {
+    id: 8,
+    name: "Cortado Wooden Platform Bed - Full",
+    description: "",
+    price: 400,
+    images: ["/images/cortado_bed.jpeg"],
+    originalUrl: "https://www.silkandsnow.com/en-us/wooden-bed-frame/?size=full&colour=cortado",
+    sold: false,
+    availableFrom: "",
+  },
+  {
     id: 3,
     name: "Poster",
     description: "",
