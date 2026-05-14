@@ -46,7 +46,7 @@ export const items = [
     price: 475,
     images: ["/images/PS5.jpeg"],
     originalUrl: "",
-    sold: false,
+    sold: true,
     availableFrom: "",
   },
   {
